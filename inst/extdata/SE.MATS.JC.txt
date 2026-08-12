@@ -1,0 +1,2 @@
+ID	GeneID	geneSymbol	chr	strand	exonStart_0base	exonEnd	upstreamES	upstreamEE	downstreamES	downstreamEE	ID.1	IJC_SAMPLE_1	SJC_SAMPLE_1	IJC_SAMPLE_2	SJC_SAMPLE_2	IncFormLen	SkipFormLen	PValue	FDR	IncLevel1	IncLevel2	IncLevelDifference
+1	"ENSG00000136754"	"ABI1"	chr10	-	27044583	27044670	27040526	27040712	27047990	27048164	1	342,440	237,244	412,443	77,147	198	99	0.0034	0.021	0.419,0.474	0.728,0.601	-0.218

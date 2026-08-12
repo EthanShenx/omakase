@@ -1,0 +1,13 @@
+^_pkgdown\.yml$
+^\.DS_Store$
+^\.github$
+^\.Rproj\.user$
+^cran-comments\.md$
+^data-raw$
+^docs$
+^figure$
+^LICENSE\.md$
+^omakase\.Rproj$
+^pkgdown$
+^README\.Rmd$
+^reference-check$

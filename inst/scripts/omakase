@@ -1,0 +1,254 @@
+#!/usr/bin/env Rscript
+# omakase command-line interface.
+#
+# Drop-in for the ggsashimi / rmats2sashimiplot command lines, so a shell
+# pipeline can use the package without anyone writing R. Install the package
+# and put this file on your PATH:
+#
+#   Rscript -e 'cat(system.file("scripts", "omakase", package = "omakase"))'
+
+suppressPackageStartupMessages({
+  library(optparse)
+  library(omakase)
+})
+
+opts <- list(
+  make_option(c("-b", "--bam"), type = "character", default = NULL,
+              help = "BAM/CRAM file, or a TSV manifest: id, path, [metadata...]"),
+  make_option(c("-j", "--junctions"), type = "character", default = NULL,
+              help = "Junction file (STAR SJ.out.tab or regtools BED) instead of --bam"),
+  make_option(c("-t", "--tags"), type = "character", default = NULL,
+              help = "5'-tag BED file or manifest instead of --bam"),
+  make_option(c("-e", "--events"), type = "character", default = NULL,
+              help = "rMATS event file; one figure per event"),
+  make_option(c("--event-type"), type = "character", default = NULL,
+              dest = "event_type",
+              help = "SE, A5SS, A3SS, MXE or RI [inferred from the file name]"),
+  make_option(c("-c", "--coordinates"), type = "character", default = NULL,
+              help = "Region, chr:start-end"),
+  make_option(c("-g", "--gtf"), type = "character", default = NULL,
+              help = "GTF or GFF3 annotation"),
+  make_option(c("--gene"), type = "character", default = NULL,
+              help = "Restrict the annotation to this gene"),
+  make_option(c("-o", "--out"), type = "character", default = "sashimi",
+              help = "Output file prefix, or a directory when plotting many loci [%default]"),
+  make_option(c("-F", "--format"), type = "character", default = "pdf",
+              help = "pdf, png, svg, tiff or jpeg [%default]"),
+
+  make_option(c("-G", "--group-col"), type = "character", default = NULL,
+              dest = "group_col", help = "Manifest column to group samples by"),
+  make_option(c("-A", "--aggregate"), type = "character", default = "none",
+              help = "Collapse replicates: mean, median, sum, max, none [%default]"),
+  make_option(c("-O", "--overlay"), type = "character", default = NULL,
+              help = "Overlay groups in shared panels: a manifest column name, or 'a,b;c,d'"),
+  make_option(c("--overlay-junctions"), type = "character", default = "mean",
+              dest = "overlay_junction_fun",
+              help = "Combine a junction shared by overlaid groups: mean, median, sum, max [%default]"),
+  make_option(c("-N", "--normalize"), type = "character", default = "none",
+              help = "none, cpm, rpm, rpkm, size_factor, max, sum [%default]"),
+  make_option(c("-P", "--palette"), type = "character", default = NULL,
+              help = "Palette name, or a file with one colour per line"),
+  make_option(c("--alpha"), type = "double", default = 1,
+              help = "Coverage opacity [%default]"),
+
+  make_option(c("-s", "--strand"), type = "character", default = "none",
+              help = "none, sense, antisense, mate1_sense, mate2_sense [%default]"),
+  make_option(c("-S", "--keep-strand"), type = "character", default = "both",
+              dest = "keep_strand", help = "both, + or - [%default]"),
+  make_option(c("-M", "--min-count"), type = "integer", default = 1,
+              dest = "min_count", help = "Minimum reads to draw a junction [%default]"),
+  make_option(c("-Q", "--min-mapq"), type = "integer", default = 0,
+              dest = "min_mapq", help = "Minimum mapping quality [%default]"),
+  make_option(c("--bin"), type = "integer", default = NULL,
+              help = "Coverage bin width in bp [chosen from the window]"),
+
+  make_option(c("--shrink"), action = "store_true", default = FALSE,
+              help = "Compress introns"),
+  make_option(c("--exon-s"), type = "double", default = 1, dest = "exon_scale",
+              help = "Scale down exons by this factor [%default]"),
+  make_option(c("--reverse-minus"), action = "store_true", default = FALSE,
+              dest = "reverse_minus",
+              help = "Draw a minus-strand locus 5' to 3', left to right"),
+  make_option(c("--shrink-method"), type = "character", default = "power",
+              dest = "shrink_method",
+              help = "none, power, log, fixed, scale [%default]"),
+  make_option(c("--shrink-gamma"), type = "double", default = 0.7,
+              dest = "shrink_gamma", help = "Exponent for the power rule [%default]"),
+
+  make_option(c("--arc-shape"), type = "character", default = "sine",
+              dest = "arc_shape",
+              help = "sine, parabola, bezier, xspline, elbow, arch [%default]"),
+  make_option(c("--arc-height"), type = "character", default = "auto",
+              dest = "arc_height",
+              help = "auto, constant, span, linear, sqrt, log [%default]"),
+  make_option(c("--arc-width"), type = "character", default = "constant",
+              dest = "arc_width_rule",
+              help = "constant, log, miso, linear [%default]"),
+  make_option(c("--arc-side"), type = "character", default = "above",
+              dest = "arc_side", help = "above or below [%default]"),
+  make_option(c("--hide-number"), action = "store_true", default = FALSE,
+              dest = "hide_number", help = "Do not print counts on the arcs"),
+  make_option(c("--no-text-background"), action = "store_false", default = TRUE,
+              dest = "label_background",
+              help = "Do not put a white box behind the arc labels"),
+
+  make_option(c("--fix-y-scale"), action = "store_true", default = FALSE,
+              dest = "fix_y_scale", help = "Same y limit on every panel"),
+  make_option(c("--ymax"), type = "double", default = NULL,
+              help = "Explicit y limit"),
+  make_option(c("--log-y"), action = "store_true", default = FALSE,
+              dest = "log_y", help = "log10(1 + coverage) axis"),
+
+  make_option(c("--width"), type = "double", default = 5.9,
+              help = "Figure width in inches [%default]"),
+  make_option(c("--height"), type = "double", default = NULL,
+              help = "Figure height in inches [from the panel count]"),
+  make_option(c("--base-size"), type = "double", default = 9, dest = "base_size",
+              help = "Base font size in points [%default]"),
+  make_option(c("-R", "--dpi"), type = "integer", default = 300,
+              help = "Resolution for raster formats [%default]"),
+  make_option(c("--title"), type = "character", default = NULL,
+              help = "Figure title"),
+
+  make_option(c("--label-position"), type = "character", default = "on",
+              dest = "arc_label_position",
+              help = "Arc counts sit 'on' the curve, 'above' it, or 'none' [%default]"),
+  make_option(c("--background"), type = "character", default = NA,
+              help = "Fill colour for the coverage panels [none]"),
+  make_option(c("--preset"), type = "character", default = NULL,
+              help = "Style bundle: default, tss, junction, minimal, igv"),
+  make_option(c("--tracks"), action = "store_true", default = FALSE,
+              help = "Draw a genome-track figure instead of a sashimi plot"),
+  make_option(c("--junctions-out"), type = "character", default = NULL,
+              dest = "junctions_out",
+              help = "Also write the counted junctions to this BED file"),
+  make_option(c("--consequence"), type = "character", default = NULL,
+              help = "Classified switch table; draws the consequence figure instead"),
+  make_option(c("--consequence-style"), type = "character", default = "donut",
+              dest = "consequence_style",
+              help = "donut, bar, lollipop or stacked [%default]"),
+
+  make_option(c("--quiet"), action = "store_true", default = FALSE,
+              help = "Suppress progress messages")
+)
+
+parser <- OptionParser(
+  usage = "omakase [options]",
+  option_list = opts,
+  description = paste(
+    "\nSashimi plots and transcript-consequence figures.\n",
+    "\nExamples:",
+    "\n  omakase -b samples.tsv -c chr10:27035000-27050000 -g anno.gtf -o abi1",
+    "\n  omakase -b samples.tsv -c chr10:27035000-27050000 -G cell_type -A mean --shrink",
+    "\n  omakase -e SE.MATS.JC.txt -b samples.tsv -o figures/",
+    "\n  omakase --consequence switches.tsv -o consequence\n"
+  )
+)
+opt <- parse_args(parser)
+
+fail <- function(...) {
+  message("Error: ", ...)
+  quit(status = 1)
+}
+say <- function(...) if (!opt$quiet) message(...)
+
+# ---- the consequence figure is a separate output -------------------------
+if (!is.null(opt$consequence)) {
+  d <- read.delim(opt$consequence, check.names = FALSE)
+  p <- plot_consequence(d, style = opt$consequence_style, title = opt$title,
+                        base_size = opt$base_size)
+  f <- paste0(opt$out, ".", opt$format)
+  ggplot2::ggsave(f, p, width = opt$width %||% 6.4,
+                  height = opt$height %||% 5.0, dpi = opt$dpi)
+  say("Wrote ", f)
+  quit(status = 0)
+}
+
+# ---- read ----------------------------------------------------------------
+sd <- if (!is.null(opt$events)) {
+  if (is.null(opt$bam)) fail("--events also needs --bam.")
+  sashimi_from_rmats(opt$events, opt$bam, event_type = opt$event_type,
+                     group_col = opt$group_col, bin = opt$bin,
+                     strand = opt$strand, keep_strand = opt$keep_strand,
+                     min_count = opt$min_count, min_mapq = opt$min_mapq)
+} else if (!is.null(opt$junctions)) {
+  if (is.null(opt$coordinates)) fail("--junctions also needs --coordinates.")
+  sashimi_from_junctions(opt$junctions, opt$coordinates, annotation = opt$gtf,
+                         group_col = opt$group_col, min_count = opt$min_count,
+                         gene = opt$gene)
+} else if (!is.null(opt$tags)) {
+  if (is.null(opt$coordinates)) fail("--tags also needs --coordinates.")
+  sashimi_from_tags(opt$tags, opt$coordinates, annotation = opt$gtf,
+                    group_col = opt$group_col, gene = opt$gene)
+} else if (!is.null(opt$bam)) {
+  if (is.null(opt$coordinates)) fail("--bam also needs --coordinates.")
+  sashimi_from_bam(opt$bam, opt$coordinates, annotation = opt$gtf,
+                   bin = opt$bin, group_col = opt$group_col,
+                   strand = opt$strand, keep_strand = opt$keep_strand,
+                   min_count = opt$min_count, min_mapq = opt$min_mapq,
+                   gene = opt$gene)
+} else {
+  print_help(parser)
+  quit(status = 1)
+}
+
+if (!is.null(opt$junctions_out)) {
+  write_junctions(sd, opt$junctions_out)
+  say("Wrote ", opt$junctions_out)
+}
+
+# ---- genome-track view ---------------------------------------------------
+if (isTRUE(opt$tracks)) {
+  p <- plot_tracks(sd, title = opt$title, base_size = opt$base_size,
+                   shrink = opt$shrink, shrink_method = opt$shrink_method,
+                   shrink_gamma = opt$shrink_gamma)
+  f <- paste0(opt$out, ".", opt$format)
+  save_tracks(p, f, width = opt$width %||% 8, height = opt$height,
+              dpi = opt$dpi)
+  say("Wrote ", f)
+  quit(status = 0)
+}
+
+# `-O a,b;c,d` names the panels by their members; a bare name is a column.
+parse_overlay <- function(v) {
+  if (is.null(v)) return(NULL)
+  if (!grepl("[,;]", v)) return(v)
+  parts <- strsplit(strsplit(v, ";", fixed = TRUE)[[1]], ",", fixed = TRUE)
+  parts <- lapply(parts, trimws)
+  setNames(parts, vapply(parts, paste, character(1), collapse = "+"))
+}
+
+# ---- draw ----------------------------------------------------------------
+args <- list(
+  x = sd, preset = opt$preset, palette = opt$palette, alpha = opt$alpha,
+  overlay = parse_overlay(opt$overlay),
+  overlay_junction_fun = opt$overlay_junction_fun,
+  reverse_minus = opt$reverse_minus,
+  arc_label_position = opt$arc_label_position,
+  background = opt$background,
+  normalize = opt$normalize, aggregate = opt$aggregate,
+  fix_y_scale = opt$fix_y_scale, ymax = opt$ymax, log_y = opt$log_y,
+  min_count = opt$min_count,
+  shrink = opt$shrink, shrink_method = opt$shrink_method,
+  shrink_gamma = opt$shrink_gamma,
+  arc_shape = opt$arc_shape, arc_height_rule = opt$arc_height,
+  arc_width_rule = opt$arc_width_rule, arc_side = opt$arc_side,
+  show_arc_label = !opt$hide_number, label_background = opt$label_background,
+  arc_label_format = "count",
+  base_size = opt$base_size, title = opt$title
+)
+
+n_loci <- length(loci(sd))
+if (n_loci > 1) {
+  dir <- opt$out
+  do.call(plot_sashimi_all, c(
+    args[setdiff(names(args), "x")],
+    list(x = sd, dir = dir, device = opt$format, width = opt$width,
+         height = opt$height, dpi = opt$dpi, quiet = opt$quiet)
+  ))
+} else {
+  p <- do.call(plot_sashimi, args)
+  f <- paste0(opt$out, ".", opt$format)
+  save_sashimi(p, f, width = opt$width, height = opt$height, dpi = opt$dpi)
+  say("Wrote ", f)
+}

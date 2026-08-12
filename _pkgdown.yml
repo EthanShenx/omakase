@@ -1,0 +1,117 @@
+url: https://EthanShenx.github.io/omakase/
+
+figures:
+  dev: ragg::agg_png
+  dpi: 300
+
+template:
+  bootstrap: 5
+  bslib:
+    primary: "#465674"
+    base_font: {google: "Source Sans 3"}
+    code_font: {google: "JetBrains Mono"}
+
+navbar:
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github]
+
+reference:
+  - title: Reading data
+    desc: >
+      Every reader returns the same object, so the input format and the figure
+      are independent choices.
+    contents:
+      - sashimi_from_bam
+      - sashimi_from_rmats
+      - sashimi_from_junctions
+      - sashimi_from_tags
+      - sashimi_from_tables
+      - read_sashimi_dir
+      - as_sashimi_data
+      - read_manifest
+      - read_annotation
+      - read_junctions
+      - read_tag_bed
+      - read_rmats
+      - read_palette
+
+  - title: The data contract
+    desc: The tidy tables every reader produces and every plot consumes.
+    contents:
+      - sashimi_data
+      - validate_sashimi_data
+      - loci
+      - combine_sashimi
+      - "`[.sashimi_data`"
+      - write_sashimi_data
+      - add_models
+
+  - title: Drawing
+    contents:
+      - plot_sashimi
+      - plot_sashimi_all
+      - sashimi_track
+      - sashimi_annotation
+      - save_sashimi
+
+  - title: Transforming
+    desc: Normalisation, aggregation, PSI and intron compression.
+    contents:
+      - normalize_tracks
+      - normalize_methods
+      - aggregate_tracks
+      - compute_psi
+      - delta_psi
+      - intron_map
+      - compress_coords
+      - intron_trans
+      - shrink_methods
+
+  - title: Arc geometry
+    contents:
+      - arc_path
+      - arc_shapes
+      - arc_heights
+      - arc_height_rules
+      - arc_widths
+
+  - title: Transcript consequences
+    desc: >
+      What an alternative start site does to the transcript, from the open
+      reading frames.
+    contents:
+      - classify_consequence
+      - consequence_summary
+      - consequence_levels
+      - consequence_labels
+      - plot_consequence
+      - find_orf
+      - orf_table
+      - splice_mrna
+      - count_uatg
+
+  - title: Appearance
+    contents:
+      - theme_omakase
+      - theme_omakase_axes
+      - omakase_palette
+      - omakase_palettes
+      - scale_colour_omakase
+
+  - title: Utilities
+    contents:
+      - parse_region
+      - format_activity
+      - format_count
+      - format_coord
+      - format_percent
+      - event_types
+      - strand_modes
+
+articles:
+  - title: Articles
+    navbar: ~
+    contents:
+      - omakase
+      - consequence

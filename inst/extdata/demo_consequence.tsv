@@ -1,0 +1,181 @@
+gene_id	gene_name	strand	category	subtype	d_utr5_bp	n_uATG_gained	uorf_gained	body_overlap	main_aa_len	alt_aa_len	aa_delta	main_tx	alt_tx	both_full_length
+ENSDEMOG00000001	Demo001	+	5'UTR change	equal	0	4	1	1	228	228	0	DEMO.1.main	DEMO.1.alt	1
+ENSDEMOG00000035	Demo035	+	5'UTR change	equal	0	2	1	1	254	254	0	DEMO.35.main	DEMO.35.alt	1
+ENSDEMOG00000048	Demo048	-	5'UTR change	equal	0	0	0	1	316	316	0	DEMO.48.main	DEMO.48.alt	1
+ENSDEMOG00000054	Demo054	+	5'UTR change	equal	0	2	1	1	152	152	0	DEMO.54.main	DEMO.54.alt	1
+ENSDEMOG00000011	Demo011	-	5'UTR change	longer	560	-1	0	1	171	171	0	DEMO.11.main	DEMO.11.alt	1
+ENSDEMOG00000014	Demo014	+	5'UTR change	longer	299	2	1	1	312	312	0	DEMO.14.main	DEMO.14.alt	1
+ENSDEMOG00000018	Demo018	-	5'UTR change	longer	325	2	1	1	311	311	0	DEMO.18.main	DEMO.18.alt	0
+ENSDEMOG00000029	Demo029	+	5'UTR change	longer	330	4	1	1	286	286	0	DEMO.29.main	DEMO.29.alt	1
+ENSDEMOG00000032	Demo032	-	5'UTR change	longer	480	2	1	1	118	118	0	DEMO.32.main	DEMO.32.alt	0
+ENSDEMOG00000034	Demo034	-	5'UTR change	longer	430	-1	0	1	130	130	0	DEMO.34.main	DEMO.34.alt	0
+ENSDEMOG00000037	Demo037	-	5'UTR change	longer	512	-2	0	1	325	325	0	DEMO.37.main	DEMO.37.alt	0
+ENSDEMOG00000045	Demo045	+	5'UTR change	longer	552	2	1	1	168	168	0	DEMO.45.main	DEMO.45.alt	0
+ENSDEMOG00000046	Demo046	+	5'UTR change	longer	350	1	1	1	217	217	0	DEMO.46.main	DEMO.46.alt	0
+ENSDEMOG00000057	Demo057	-	5'UTR change	longer	105	-1	0	1	317	317	0	DEMO.57.main	DEMO.57.alt	0
+ENSDEMOG00000064	Demo064	-	5'UTR change	longer	390	3	1	1	171	171	0	DEMO.64.main	DEMO.64.alt	1
+ENSDEMOG00000066	Demo066	-	5'UTR change	longer	428	2	1	1	308	308	0	DEMO.66.main	DEMO.66.alt	1
+ENSDEMOG00000069	Demo069	+	5'UTR change	longer	550	1	1	1	219	219	0	DEMO.69.main	DEMO.69.alt	1
+ENSDEMOG00000091	Demo091	-	5'UTR change	longer	95	1	1	1	236	236	0	DEMO.91.main	DEMO.91.alt	1
+ENSDEMOG00000097	Demo097	-	5'UTR change	longer	465	0	0	1	245	245	0	DEMO.97.main	DEMO.97.alt	1
+ENSDEMOG00000104	Demo104	+	5'UTR change	longer	298	1	1	1	269	269	0	DEMO.104.main	DEMO.104.alt	1
+ENSDEMOG00000110	Demo110	+	5'UTR change	longer	142	1	1	1	93	93	0	DEMO.110.main	DEMO.110.alt	1
+ENSDEMOG00000136	Demo136	-	5'UTR change	longer	128	2	1	1	278	278	0	DEMO.136.main	DEMO.136.alt	1
+ENSDEMOG00000142	Demo142	-	5'UTR change	longer	120	-2	0	1	331	331	0	DEMO.142.main	DEMO.142.alt	1
+ENSDEMOG00000157	Demo157	-	5'UTR change	longer	120	-2	0	1	241	241	0	DEMO.157.main	DEMO.157.alt	1
+ENSDEMOG00000162	Demo162	+	5'UTR change	longer	544	2	1	1	255	255	0	DEMO.162.main	DEMO.162.alt	0
+ENSDEMOG00000002	Demo002	+	5'UTR change	shorter	-93	3	1	1	118	118	0	DEMO.2.main	DEMO.2.alt	1
+ENSDEMOG00000051	Demo051	-	5'UTR change	shorter	-179	3	1	1	248	248	0	DEMO.51.main	DEMO.51.alt	1
+ENSDEMOG00000072	Demo072	+	5'UTR change	shorter	-30	4	1	1	373	373	0	DEMO.72.main	DEMO.72.alt	1
+ENSDEMOG00000080	Demo080	+	5'UTR change	shorter	-224	1	1	1	395	395	0	DEMO.80.main	DEMO.80.alt	1
+ENSDEMOG00000127	Demo127	+	5'UTR change	shorter	-128	-2	0	1	103	103	0	DEMO.127.main	DEMO.127.alt	1
+ENSDEMOG00000129	Demo129	-	5'UTR change	shorter	-30	-1	0	1	174	174	0	DEMO.129.main	DEMO.129.alt	1
+ENSDEMOG00000153	Demo153	+	5'UTR change	shorter	-91	4	1	1	375	375	0	DEMO.153.main	DEMO.153.alt	1
+ENSDEMOG00000164	Demo164	+	5'UTR change	shorter	-190	1	1	1	385	385	0	DEMO.164.main	DEMO.164.alt	1
+ENSDEMOG00000168	Demo168	+	5'UTR change	shorter	-103	2	1	1	278	278	0	DEMO.168.main	DEMO.168.alt	1
+ENSDEMOG00000172	Demo172	+	5'UTR change	shorter	-27	-2	0	1	187	187	0	DEMO.172.main	DEMO.172.alt	1
+ENSDEMOG00000174	Demo174	+	5'UTR change	shorter	-115	3	1	1	374	374	0	DEMO.174.main	DEMO.174.alt	0
+ENSDEMOG00000013	Demo013	-	Distal (excluded)	non-overlapping isoforms	0	1	1	0	295	295	0	DEMO.13.main	DEMO.13.alt	1
+ENSDEMOG00000036	Demo036	-	Distal (excluded)	non-overlapping isoforms	0	2	1	0	256	256	0	DEMO.36.main	DEMO.36.alt	1
+ENSDEMOG00000040	Demo040	+	Distal (excluded)	non-overlapping isoforms	0	2	1	0	212	212	0	DEMO.40.main	DEMO.40.alt	1
+ENSDEMOG00000050	Demo050	+	Distal (excluded)	non-overlapping isoforms	0	-2	0	0	144	144	0	DEMO.50.main	DEMO.50.alt	1
+ENSDEMOG00000099	Demo099	-	Distal (excluded)	non-overlapping isoforms	0	0	0	0	248	248	0	DEMO.99.main	DEMO.99.alt	1
+ENSDEMOG00000139	Demo139	+	Distal (excluded)	non-overlapping isoforms	0	-1	0	0	311	311	0	DEMO.139.main	DEMO.139.alt	1
+ENSDEMOG00000160	Demo160	-	Distal (excluded)	non-overlapping isoforms	0	0	0	0	110	110	0	DEMO.160.main	DEMO.160.alt	1
+ENSDEMOG00000170	Demo170	-	Distal (excluded)	non-overlapping isoforms	0	3	1	0	122	122	0	DEMO.170.main	DEMO.170.alt	1
+ENSDEMOG00000003	Demo003	-	N-terminal/CDS	alt N-terminus	0	2	1	1	374	344	-30	DEMO.3.main	DEMO.3.alt	0
+ENSDEMOG00000004	Demo004	+	N-terminal/CDS	alt N-terminus	0	-1	0	1	211	197	-14	DEMO.4.main	DEMO.4.alt	1
+ENSDEMOG00000007	Demo007	-	N-terminal/CDS	alt N-terminus	0	4	1	1	244	215	-29	DEMO.7.main	DEMO.7.alt	0
+ENSDEMOG00000008	Demo008	-	N-terminal/CDS	alt N-terminus	0	-2	0	1	200	219	19	DEMO.8.main	DEMO.8.alt	1
+ENSDEMOG00000009	Demo009	+	N-terminal/CDS	alt N-terminus	0	0	0	1	309	264	-45	DEMO.9.main	DEMO.9.alt	0
+ENSDEMOG00000012	Demo012	-	N-terminal/CDS	alt N-terminus	0	-2	0	1	130	139	9	DEMO.12.main	DEMO.12.alt	1
+ENSDEMOG00000015	Demo015	+	N-terminal/CDS	alt N-terminus	0	-1	0	1	368	323	-45	DEMO.15.main	DEMO.15.alt	1
+ENSDEMOG00000016	Demo016	+	N-terminal/CDS	alt N-terminus	0	-2	0	1	259	254	-5	DEMO.16.main	DEMO.16.alt	1
+ENSDEMOG00000019	Demo019	-	N-terminal/CDS	alt N-terminus	0	1	1	1	402	424	22	DEMO.19.main	DEMO.19.alt	1
+ENSDEMOG00000020	Demo020	-	N-terminal/CDS	alt N-terminus	0	-2	0	1	281	297	16	DEMO.20.main	DEMO.20.alt	1
+ENSDEMOG00000022	Demo022	+	N-terminal/CDS	alt N-terminus	0	-1	0	1	111	111	0	DEMO.22.main	DEMO.22.alt	1
+ENSDEMOG00000025	Demo025	-	N-terminal/CDS	alt N-terminus	0	2	1	1	395	382	-13	DEMO.25.main	DEMO.25.alt	1
+ENSDEMOG00000026	Demo026	-	N-terminal/CDS	alt N-terminus	0	0	0	1	128	125	-3	DEMO.26.main	DEMO.26.alt	1
+ENSDEMOG00000027	Demo027	-	N-terminal/CDS	alt N-terminus	0	1	1	1	344	369	25	DEMO.27.main	DEMO.27.alt	1
+ENSDEMOG00000028	Demo028	-	N-terminal/CDS	alt N-terminus	0	2	1	1	399	418	19	DEMO.28.main	DEMO.28.alt	0
+ENSDEMOG00000031	Demo031	-	N-terminal/CDS	alt N-terminus	0	1	1	1	366	334	-32	DEMO.31.main	DEMO.31.alt	1
+ENSDEMOG00000033	Demo033	+	N-terminal/CDS	alt N-terminus	0	0	0	1	245	256	11	DEMO.33.main	DEMO.33.alt	1
+ENSDEMOG00000038	Demo038	-	N-terminal/CDS	alt N-terminus	0	3	1	1	101	117	16	DEMO.38.main	DEMO.38.alt	1
+ENSDEMOG00000039	Demo039	-	N-terminal/CDS	alt N-terminus	0	1	1	1	169	129	-40	DEMO.39.main	DEMO.39.alt	1
+ENSDEMOG00000041	Demo041	-	N-terminal/CDS	alt N-terminus	0	-2	0	1	267	292	25	DEMO.41.main	DEMO.41.alt	0
+ENSDEMOG00000043	Demo043	+	N-terminal/CDS	alt N-terminus	0	1	1	1	289	292	3	DEMO.43.main	DEMO.43.alt	1
+ENSDEMOG00000044	Demo044	+	N-terminal/CDS	alt N-terminus	0	-1	0	1	376	368	-8	DEMO.44.main	DEMO.44.alt	1
+ENSDEMOG00000047	Demo047	-	N-terminal/CDS	alt N-terminus	0	1	1	1	197	207	10	DEMO.47.main	DEMO.47.alt	1
+ENSDEMOG00000053	Demo053	+	N-terminal/CDS	alt N-terminus	0	1	1	1	400	422	22	DEMO.53.main	DEMO.53.alt	1
+ENSDEMOG00000059	Demo059	+	N-terminal/CDS	alt N-terminus	0	-1	0	1	219	237	18	DEMO.59.main	DEMO.59.alt	0
+ENSDEMOG00000063	Demo063	+	N-terminal/CDS	alt N-terminus	0	1	1	1	318	304	-14	DEMO.63.main	DEMO.63.alt	1
+ENSDEMOG00000065	Demo065	+	N-terminal/CDS	alt N-terminus	0	0	0	1	324	319	-5	DEMO.65.main	DEMO.65.alt	1
+ENSDEMOG00000067	Demo067	-	N-terminal/CDS	alt N-terminus	0	2	1	1	200	160	-40	DEMO.67.main	DEMO.67.alt	0
+ENSDEMOG00000068	Demo068	+	N-terminal/CDS	alt N-terminus	0	0	0	1	390	372	-18	DEMO.68.main	DEMO.68.alt	0
+ENSDEMOG00000075	Demo075	-	N-terminal/CDS	alt N-terminus	0	-2	0	1	238	240	2	DEMO.75.main	DEMO.75.alt	0
+ENSDEMOG00000081	Demo081	-	N-terminal/CDS	alt N-terminus	0	2	1	1	183	173	-10	DEMO.81.main	DEMO.81.alt	1
+ENSDEMOG00000083	Demo083	+	N-terminal/CDS	alt N-terminus	0	2	1	1	239	231	-8	DEMO.83.main	DEMO.83.alt	0
+ENSDEMOG00000087	Demo087	+	N-terminal/CDS	alt N-terminus	0	3	1	1	405	421	16	DEMO.87.main	DEMO.87.alt	0
+ENSDEMOG00000088	Demo088	-	N-terminal/CDS	alt N-terminus	0	2	1	1	347	329	-18	DEMO.88.main	DEMO.88.alt	1
+ENSDEMOG00000089	Demo089	-	N-terminal/CDS	alt N-terminus	0	3	1	1	276	265	-11	DEMO.89.main	DEMO.89.alt	0
+ENSDEMOG00000090	Demo090	-	N-terminal/CDS	alt N-terminus	0	3	1	1	114	127	13	DEMO.90.main	DEMO.90.alt	1
+ENSDEMOG00000092	Demo092	-	N-terminal/CDS	alt N-terminus	0	0	0	1	237	233	-4	DEMO.92.main	DEMO.92.alt	0
+ENSDEMOG00000096	Demo096	-	N-terminal/CDS	alt N-terminus	0	0	0	1	402	381	-21	DEMO.96.main	DEMO.96.alt	1
+ENSDEMOG00000103	Demo103	-	N-terminal/CDS	alt N-terminus	0	0	0	1	95	101	6	DEMO.103.main	DEMO.103.alt	1
+ENSDEMOG00000105	Demo105	+	N-terminal/CDS	alt N-terminus	0	-1	0	1	202	237	35	DEMO.105.main	DEMO.105.alt	0
+ENSDEMOG00000106	Demo106	+	N-terminal/CDS	alt N-terminus	0	4	1	1	292	305	13	DEMO.106.main	DEMO.106.alt	1
+ENSDEMOG00000111	Demo111	-	N-terminal/CDS	alt N-terminus	0	0	0	1	387	414	27	DEMO.111.main	DEMO.111.alt	1
+ENSDEMOG00000113	Demo113	+	N-terminal/CDS	alt N-terminus	0	3	1	1	289	259	-30	DEMO.113.main	DEMO.113.alt	0
+ENSDEMOG00000116	Demo116	-	N-terminal/CDS	alt N-terminus	0	-1	0	1	239	264	25	DEMO.116.main	DEMO.116.alt	1
+ENSDEMOG00000117	Demo117	+	N-terminal/CDS	alt N-terminus	0	1	1	1	98	113	15	DEMO.117.main	DEMO.117.alt	0
+ENSDEMOG00000120	Demo120	-	N-terminal/CDS	alt N-terminus	0	-2	0	1	418	405	-13	DEMO.120.main	DEMO.120.alt	1
+ENSDEMOG00000121	Demo121	+	N-terminal/CDS	alt N-terminus	0	2	1	1	177	180	3	DEMO.121.main	DEMO.121.alt	0
+ENSDEMOG00000122	Demo122	+	N-terminal/CDS	alt N-terminus	0	3	1	1	233	271	38	DEMO.122.main	DEMO.122.alt	1
+ENSDEMOG00000123	Demo123	+	N-terminal/CDS	alt N-terminus	0	1	1	1	409	392	-17	DEMO.123.main	DEMO.123.alt	1
+ENSDEMOG00000124	Demo124	+	N-terminal/CDS	alt N-terminus	0	0	0	1	200	189	-11	DEMO.124.main	DEMO.124.alt	1
+ENSDEMOG00000128	Demo128	+	N-terminal/CDS	alt N-terminus	0	-2	0	1	388	367	-21	DEMO.128.main	DEMO.128.alt	1
+ENSDEMOG00000131	Demo131	-	N-terminal/CDS	alt N-terminus	0	1	1	1	276	283	7	DEMO.131.main	DEMO.131.alt	0
+ENSDEMOG00000132	Demo132	-	N-terminal/CDS	alt N-terminus	0	-2	0	1	282	258	-24	DEMO.132.main	DEMO.132.alt	1
+ENSDEMOG00000137	Demo137	+	N-terminal/CDS	alt N-terminus	0	0	0	1	404	385	-19	DEMO.137.main	DEMO.137.alt	1
+ENSDEMOG00000144	Demo144	+	N-terminal/CDS	alt N-terminus	0	0	0	1	264	254	-10	DEMO.144.main	DEMO.144.alt	0
+ENSDEMOG00000145	Demo145	+	N-terminal/CDS	alt N-terminus	0	3	1	1	210	223	13	DEMO.145.main	DEMO.145.alt	0
+ENSDEMOG00000148	Demo148	-	N-terminal/CDS	alt N-terminus	0	3	1	1	402	434	32	DEMO.148.main	DEMO.148.alt	1
+ENSDEMOG00000150	Demo150	+	N-terminal/CDS	alt N-terminus	0	1	1	1	190	165	-25	DEMO.150.main	DEMO.150.alt	0
+ENSDEMOG00000151	Demo151	+	N-terminal/CDS	alt N-terminus	0	1	1	1	114	102	-12	DEMO.151.main	DEMO.151.alt	1
+ENSDEMOG00000152	Demo152	-	N-terminal/CDS	alt N-terminus	0	4	1	1	337	319	-18	DEMO.152.main	DEMO.152.alt	1
+ENSDEMOG00000154	Demo154	+	N-terminal/CDS	alt N-terminus	0	2	1	1	372	364	-8	DEMO.154.main	DEMO.154.alt	0
+ENSDEMOG00000155	Demo155	-	N-terminal/CDS	alt N-terminus	0	2	1	1	93	85	-8	DEMO.155.main	DEMO.155.alt	0
+ENSDEMOG00000156	Demo156	-	N-terminal/CDS	alt N-terminus	0	1	1	1	166	137	-29	DEMO.156.main	DEMO.156.alt	1
+ENSDEMOG00000161	Demo161	+	N-terminal/CDS	alt N-terminus	0	1	1	1	154	170	16	DEMO.161.main	DEMO.161.alt	1
+ENSDEMOG00000163	Demo163	+	N-terminal/CDS	alt N-terminus	0	2	1	1	377	352	-25	DEMO.163.main	DEMO.163.alt	1
+ENSDEMOG00000165	Demo165	+	N-terminal/CDS	alt N-terminus	0	-2	0	1	172	181	9	DEMO.165.main	DEMO.165.alt	1
+ENSDEMOG00000171	Demo171	+	N-terminal/CDS	alt N-terminus	0	-2	0	1	202	204	2	DEMO.171.main	DEMO.171.alt	1
+ENSDEMOG00000179	Demo179	-	N-terminal/CDS	alt N-terminus	0	4	1	1	398	382	-16	DEMO.179.main	DEMO.179.alt	1
+ENSDEMOG00000180	Demo180	-	N-terminal/CDS	alt N-terminus	0	2	1	1	331	319	-12	DEMO.180.main	DEMO.180.alt	1
+ENSDEMOG00000005	Demo005	-	N-terminal/CDS	N-term extension	0	1	1	1	223	236	13	DEMO.5.main	DEMO.5.alt	1
+ENSDEMOG00000030	Demo030	-	N-terminal/CDS	N-term extension	0	2	1	1	178	195	17	DEMO.30.main	DEMO.30.alt	1
+ENSDEMOG00000042	Demo042	-	N-terminal/CDS	N-term extension	0	-2	0	1	299	340	41	DEMO.42.main	DEMO.42.alt	1
+ENSDEMOG00000056	Demo056	+	N-terminal/CDS	N-term extension	0	1	1	1	246	272	26	DEMO.56.main	DEMO.56.alt	1
+ENSDEMOG00000071	Demo071	-	N-terminal/CDS	N-term extension	0	-2	0	1	202	227	25	DEMO.71.main	DEMO.71.alt	1
+ENSDEMOG00000073	Demo073	+	N-terminal/CDS	N-term extension	0	-1	0	1	146	167	21	DEMO.73.main	DEMO.73.alt	1
+ENSDEMOG00000074	Demo074	+	N-terminal/CDS	N-term extension	0	1	1	1	98	113	15	DEMO.74.main	DEMO.74.alt	0
+ENSDEMOG00000077	Demo077	-	N-terminal/CDS	N-term extension	0	0	0	1	257	276	19	DEMO.77.main	DEMO.77.alt	0
+ENSDEMOG00000082	Demo082	-	N-terminal/CDS	N-term extension	0	2	1	1	369	405	36	DEMO.82.main	DEMO.82.alt	0
+ENSDEMOG00000084	Demo084	-	N-terminal/CDS	N-term extension	0	2	1	1	131	152	21	DEMO.84.main	DEMO.84.alt	1
+ENSDEMOG00000093	Demo093	+	N-terminal/CDS	N-term extension	0	0	0	1	140	148	8	DEMO.93.main	DEMO.93.alt	0
+ENSDEMOG00000101	Demo101	-	N-terminal/CDS	N-term extension	0	4	1	1	286	306	20	DEMO.101.main	DEMO.101.alt	1
+ENSDEMOG00000102	Demo102	-	N-terminal/CDS	N-term extension	0	2	1	1	382	396	14	DEMO.102.main	DEMO.102.alt	1
+ENSDEMOG00000107	Demo107	-	N-terminal/CDS	N-term extension	0	2	1	1	177	198	21	DEMO.107.main	DEMO.107.alt	0
+ENSDEMOG00000108	Demo108	+	N-terminal/CDS	N-term extension	0	-2	0	1	215	243	28	DEMO.108.main	DEMO.108.alt	1
+ENSDEMOG00000109	Demo109	+	N-terminal/CDS	N-term extension	0	2	1	1	146	186	40	DEMO.109.main	DEMO.109.alt	1
+ENSDEMOG00000112	Demo112	+	N-terminal/CDS	N-term extension	0	0	0	1	259	292	33	DEMO.112.main	DEMO.112.alt	1
+ENSDEMOG00000115	Demo115	+	N-terminal/CDS	N-term extension	0	0	0	1	199	218	19	DEMO.115.main	DEMO.115.alt	1
+ENSDEMOG00000118	Demo118	-	N-terminal/CDS	N-term extension	0	0	0	1	402	411	9	DEMO.118.main	DEMO.118.alt	0
+ENSDEMOG00000125	Demo125	+	N-terminal/CDS	N-term extension	0	0	0	1	217	239	22	DEMO.125.main	DEMO.125.alt	1
+ENSDEMOG00000126	Demo126	-	N-terminal/CDS	N-term extension	0	2	1	1	285	307	22	DEMO.126.main	DEMO.126.alt	1
+ENSDEMOG00000133	Demo133	+	N-terminal/CDS	N-term extension	0	2	1	1	140	165	25	DEMO.133.main	DEMO.133.alt	1
+ENSDEMOG00000134	Demo134	+	N-terminal/CDS	N-term extension	0	3	1	1	355	389	34	DEMO.134.main	DEMO.134.alt	1
+ENSDEMOG00000135	Demo135	+	N-terminal/CDS	N-term extension	0	1	1	1	201	224	23	DEMO.135.main	DEMO.135.alt	1
+ENSDEMOG00000146	Demo146	+	N-terminal/CDS	N-term extension	0	-1	0	1	191	214	23	DEMO.146.main	DEMO.146.alt	1
+ENSDEMOG00000147	Demo147	-	N-terminal/CDS	N-term extension	0	3	1	1	102	120	18	DEMO.147.main	DEMO.147.alt	1
+ENSDEMOG00000149	Demo149	+	N-terminal/CDS	N-term extension	0	0	0	1	341	365	24	DEMO.149.main	DEMO.149.alt	0
+ENSDEMOG00000158	Demo158	-	N-terminal/CDS	N-term extension	0	3	1	1	400	427	27	DEMO.158.main	DEMO.158.alt	1
+ENSDEMOG00000167	Demo167	-	N-terminal/CDS	N-term extension	0	0	0	1	402	409	7	DEMO.167.main	DEMO.167.alt	1
+ENSDEMOG00000169	Demo169	+	N-terminal/CDS	N-term extension	0	-1	0	1	420	453	33	DEMO.169.main	DEMO.169.alt	1
+ENSDEMOG00000176	Demo176	+	N-terminal/CDS	N-term extension	0	3	1	1	208	235	27	DEMO.176.main	DEMO.176.alt	1
+ENSDEMOG00000006	Demo006	-	N-terminal/CDS	N-term truncation	0	0	0	1	112	76	-36	DEMO.6.main	DEMO.6.alt	1
+ENSDEMOG00000010	Demo010	+	N-terminal/CDS	N-term truncation	0	2	1	1	232	211	-21	DEMO.10.main	DEMO.10.alt	0
+ENSDEMOG00000017	Demo017	-	N-terminal/CDS	N-term truncation	0	1	1	1	410	342	-68	DEMO.17.main	DEMO.17.alt	1
+ENSDEMOG00000024	Demo024	-	N-terminal/CDS	N-term truncation	0	-1	0	1	208	159	-49	DEMO.24.main	DEMO.24.alt	1
+ENSDEMOG00000052	Demo052	-	N-terminal/CDS	N-term truncation	0	1	1	1	286	275	-11	DEMO.52.main	DEMO.52.alt	1
+ENSDEMOG00000055	Demo055	-	N-terminal/CDS	N-term truncation	0	1	1	1	199	130	-69	DEMO.55.main	DEMO.55.alt	0
+ENSDEMOG00000070	Demo070	-	N-terminal/CDS	N-term truncation	0	2	1	1	182	124	-58	DEMO.70.main	DEMO.70.alt	1
+ENSDEMOG00000079	Demo079	-	N-terminal/CDS	N-term truncation	0	-1	0	1	298	283	-15	DEMO.79.main	DEMO.79.alt	1
+ENSDEMOG00000085	Demo085	+	N-terminal/CDS	N-term truncation	0	3	1	1	313	288	-25	DEMO.85.main	DEMO.85.alt	0
+ENSDEMOG00000094	Demo094	-	N-terminal/CDS	N-term truncation	0	0	0	1	127	103	-24	DEMO.94.main	DEMO.94.alt	1
+ENSDEMOG00000095	Demo095	+	N-terminal/CDS	N-term truncation	0	-1	0	1	279	226	-53	DEMO.95.main	DEMO.95.alt	1
+ENSDEMOG00000098	Demo098	-	N-terminal/CDS	N-term truncation	0	-2	0	1	293	253	-40	DEMO.98.main	DEMO.98.alt	1
+ENSDEMOG00000119	Demo119	-	N-terminal/CDS	N-term truncation	0	0	0	1	353	296	-57	DEMO.119.main	DEMO.119.alt	0
+ENSDEMOG00000140	Demo140	+	N-terminal/CDS	N-term truncation	0	-2	0	1	281	251	-30	DEMO.140.main	DEMO.140.alt	1
+ENSDEMOG00000143	Demo143	+	N-terminal/CDS	N-term truncation	0	-1	0	1	416	398	-18	DEMO.143.main	DEMO.143.alt	1
+ENSDEMOG00000166	Demo166	+	N-terminal/CDS	N-term truncation	0	3	1	1	395	364	-31	DEMO.166.main	DEMO.166.alt	0
+ENSDEMOG00000173	Demo173	+	N-terminal/CDS	N-term truncation	0	2	1	1	318	284	-34	DEMO.173.main	DEMO.173.alt	0
+ENSDEMOG00000177	Demo177	-	N-terminal/CDS	N-term truncation	0	-2	0	1	178	168	-10	DEMO.177.main	DEMO.177.alt	0
+ENSDEMOG00000175	Demo175	+	N-terminal/CDS	ORF loss	0	3	1	1	380	0	-380	DEMO.175.main	DEMO.175.alt	1
+ENSDEMOG00000021	Demo021	-	Promoter swap	alt first exon	0	0	0	1	331	331	0	DEMO.21.main	DEMO.21.alt	0
+ENSDEMOG00000023	Demo023	-	Promoter swap	alt first exon	0	-1	0	1	103	103	0	DEMO.23.main	DEMO.23.alt	0
+ENSDEMOG00000049	Demo049	-	Promoter swap	alt first exon	0	0	0	1	373	373	0	DEMO.49.main	DEMO.49.alt	0
+ENSDEMOG00000058	Demo058	-	Promoter swap	alt first exon	0	2	1	1	118	118	0	DEMO.58.main	DEMO.58.alt	0
+ENSDEMOG00000060	Demo060	+	Promoter swap	alt first exon	0	0	0	1	273	273	0	DEMO.60.main	DEMO.60.alt	1
+ENSDEMOG00000061	Demo061	+	Promoter swap	alt first exon	0	1	1	1	358	358	0	DEMO.61.main	DEMO.61.alt	1
+ENSDEMOG00000062	Demo062	+	Promoter swap	alt first exon	0	3	1	1	321	321	0	DEMO.62.main	DEMO.62.alt	1
+ENSDEMOG00000076	Demo076	-	Promoter swap	alt first exon	0	1	1	1	315	315	0	DEMO.76.main	DEMO.76.alt	1
+ENSDEMOG00000078	Demo078	+	Promoter swap	alt first exon	0	-2	0	1	324	324	0	DEMO.78.main	DEMO.78.alt	1
+ENSDEMOG00000086	Demo086	+	Promoter swap	alt first exon	0	-1	0	1	194	194	0	DEMO.86.main	DEMO.86.alt	1
+ENSDEMOG00000100	Demo100	+	Promoter swap	alt first exon	0	-1	0	1	270	270	0	DEMO.100.main	DEMO.100.alt	1
+ENSDEMOG00000114	Demo114	+	Promoter swap	alt first exon	0	1	1	1	412	412	0	DEMO.114.main	DEMO.114.alt	1
+ENSDEMOG00000130	Demo130	-	Promoter swap	alt first exon	0	0	0	1	189	189	0	DEMO.130.main	DEMO.130.alt	1
+ENSDEMOG00000138	Demo138	-	Promoter swap	alt first exon	0	-1	0	1	342	342	0	DEMO.138.main	DEMO.138.alt	0
+ENSDEMOG00000141	Demo141	+	Promoter swap	alt first exon	0	0	0	1	261	261	0	DEMO.141.main	DEMO.141.alt	0
+ENSDEMOG00000159	Demo159	+	Promoter swap	alt first exon	0	3	1	1	114	114	0	DEMO.159.main	DEMO.159.alt	1
+ENSDEMOG00000178	Demo178	-	Promoter swap	alt first exon	0	3	1	1	247	247	0	DEMO.178.main	DEMO.178.alt	1
