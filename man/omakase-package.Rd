@@ -14,12 +14,13 @@ A chef's-choice toolkit for RNA-seq splicing and transcription-start-site figure
 Useful links:
 \itemize{
   \item \url{https://github.com/EthanShenx/omakase}
+  \item \url{https://EthanShenx.github.io/omakase/}
   \item Report bugs at \url{https://github.com/EthanShenx/omakase/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Ethan Shen \email{YOUR@EMAIL.COM}
+\strong{Maintainer}: Ethan Shen \email{ethanshen111@gmail.com}
 
 }
 \keyword{internal}

@@ -128,24 +128,24 @@ The default figure is a radial donut. Each subtype gets an equal angular
 sector, so a rare category is as legible as a common one, and the *radius*
 carries the abundance:
 
-```{r}
+```{r, fig.alt = "Radial donut of start-site switch consequences, each subtype an equal-angle sector whose radius encodes its abundance."}
 plot_consequence(d, filter = both_full_length == 1,
                  title = "What the switch does to the transcript")
 ```
 
 Three other styles are available when a ring is not what you want:
 
-```{r fig.height = 3.2}
+```{r fig.height = 3.2, fig.alt = "Lollipop chart of start-site switch consequences, one row per subtype, coloured by consequence category."}
 plot_consequence(d, filter = both_full_length == 1, style = "lollipop")
 ```
 
-```{r fig.height = 3.2}
+```{r fig.height = 3.2, fig.alt = "Bar chart of start-site switch consequences, one bar per subtype, coloured by consequence category."}
 plot_consequence(d, filter = both_full_length == 1, style = "bar")
 ```
 
 Every style returns a `ggplot`, so the usual adjustments apply:
 
-```{r fig.height = 3.2}
+```{r fig.height = 3.2, fig.alt = "Lollipop chart of all switch consequences with a custom title and axis label."}
 plot_consequence(d, style = "lollipop") +
   ggplot2::labs(title = "All switches", x = "Number of genes")
 ```

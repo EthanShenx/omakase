@@ -71,7 +71,7 @@ head(sd$junctions, 4)
 
 Drawing it aggregates the two libraries of each cell type into one panel:
 
-```{r}
+```{r, fig.alt = "Sashimi plot of the ABI1 locus in three cell types, replicates averaged, with junction read counts on the arcs."}
 plot_sashimi(sd, aggregate = "mean", arc_label_format = "count")
 ```
 
@@ -81,7 +81,7 @@ Most of a gene is intron, so a linear axis spends most of its width on empty
 sequence. `shrink = TRUE` draws each intron at a reduced length while leaving
 exons at scale 1, and the axis still reports true genomic coordinates.
 
-```{r}
+```{r, fig.alt = "The same ABI1 sashimi plot with introns compressed, so the coordinate bar's evenly spaced ticks carry unevenly spaced genomic labels."}
 plot_sashimi(sd, aggregate = "mean", arc_label_format = "count",
              shrink = TRUE, arc_width_rule = "log", arc_width = 0.3)
 ```
@@ -125,7 +125,7 @@ sizes at all.
 Six geometries are available. The sine arc is the default; the x-spline is what
 ggsashimi draws, the Bezier is MISO's.
 
-```{r fig.height = 3}
+```{r fig.height = 3, fig.alt = "Three coverage panels of the same junction drawn with sine, Bezier and elbow arc shapes."}
 library(patchwork)
 
 wrap_plots(lapply(c("sine", "bezier", "elbow"), function(s) {
@@ -142,7 +142,7 @@ directly. This is also how the package draws start-site activity figures, where
 an "arc" is a pointer from a start site to the body of the transcript rather
 than a counted junction.
 
-```{r fig.height = 4}
+```{r fig.height = 4, fig.alt = "Start-site activity plot: two conditions, an arc from each start site to a shared downstream anchor labelled with its activity, and two isoform models beneath."}
 pos <- seq(10000, 30000, length.out = 201)
 wave <- function(scale) abs(sin(seq(0, 3 * pi, length.out = 201))) * scale
 

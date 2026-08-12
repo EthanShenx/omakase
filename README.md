@@ -234,7 +234,7 @@ $i$ of sample $j$, $N_j$ the library size and $L$ the bin width in kilobases:
 
 where $s_j$ is DESeq2's median-of-ratios size factor,
 
-$$s_j = \operatorname*{median}_{i}\ \frac{k_{ij}}{\left(\prod_{v=1}^{m} k_{iv}\right)^{1/m}},$$
+$$s_j = \underset{i}{\mathrm{median}}\ \frac{k_{ij}}{\left(\prod_{v=1}^{m} k_{iv}\right)^{1/m}},$$
 
 taken over bins with non-zero signal in every one of the $m$ samples. Junction
 counts are rescaled by the same per-sample factor, so an arc's label stays on
@@ -281,7 +281,7 @@ and $\ell_m$, $\ell_a$ their 5′ UTR lengths. The decision tree is:
    two first exons are disjoint **and** the alternative site is downstream, the
    gene has switched promoters outright: **promoter swap**. Otherwise a
    **5′ UTR change**, `longer` / `shorter` / `equal` by
-   $\operatorname{sign}(\ell_a - \ell_m)$.
+   $\mathrm{sign}(\ell_a - \ell_m)$.
 3. $P_a \neq P_m$ — if $P_m$ ends with $P_a$ it is an **N-terminal
    truncation**; if $P_a$ ends with $P_m$, an **extension**; otherwise an
    **alternative N-terminus**.

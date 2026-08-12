@@ -53,6 +53,7 @@ Suggests:
     withr
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-URL: https://github.com/EthanShenx/omakase
+URL: https://github.com/EthanShenx/omakase,
+    https://EthanShenx.github.io/omakase/
 BugReports: https://github.com/EthanShenx/omakase/issues
 biocViews: Visualization, RNASeq, AlternativeSplicing, Transcription, Coverage

@@ -32,6 +32,8 @@ reference:
       - read_manifest
       - read_annotation
       - read_junctions
+      - write_junctions
+      - read_bed
       - read_tag_bed
       - read_rmats
       - read_palette
@@ -47,13 +49,27 @@ reference:
       - write_sashimi_data
       - add_models
 
-  - title: Drawing
+  - title: Drawing sashimi plots
     contents:
       - plot_sashimi
       - plot_sashimi_all
       - sashimi_track
       - sashimi_annotation
       - save_sashimi
+      - presets
+
+  - title: Drawing genome tracks
+    desc: >
+      The browser-style view of a locus: stacked tracks over a shared
+      coordinate axis, built from composable pieces.
+    contents:
+      - plot_tracks
+      - track_models
+      - track_coverage
+      - track_features
+      - track_axis
+      - track_spacer
+      - save_tracks
 
   - title: Transforming
     desc: Normalisation, aggregation, PSI and intron compression.
