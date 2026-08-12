@@ -13,7 +13,7 @@ An R package for **sashimi plots**, **genome-track figures** and
 **transcript-consequence** analysis. It reads coverage and junctions straight
 from BAM/SAM files, rMATS event tables, STAR junction files, 5′-tag BEDs or
 plain data frames, and draws them with defaults that are already
-publication-ready. It also answers a question no plotting tool answers: **what
+publication-ready. It can also answer **what
 does an alternative start site actually do to the transcript?**
 
 ![Sashimi plot of the human ABI1 locus across three cell types](man/figures/sashimi-default.png)
@@ -791,108 +791,20 @@ Takes everything `sashimi_from_bam()` does via `...`, plus:
 | `show_guides` | `TRUE` | Dotted magnitude guide circles |
 | `legend_position` | `"bottom"` | Legend placement |
 
-### Everything else
-
-`sashimi_data()` · `validate_sashimi_data()` · `combine_sashimi()` ·
-`write_sashimi_data()` · `read_sashimi_dir()` · `as_sashimi_data()` ·
-`add_models()` · `sashimi_track()` · `sashimi_annotation()` ·
-`plot_sashimi_all()` · `save_sashimi()` · `save_tracks()` ·
-`normalize_tracks()` · `aggregate_tracks()` · `compute_psi()` · `delta_psi()` ·
-`intron_map()` · `compress_coords()` · `expand_coords()` · `intron_trans()` ·
-`arc_path()` · `arc_heights()` · `arc_widths()` · `classify_consequence()` ·
-`consequence_summary()` · `find_orf()` · `orf_table()` · `splice_mrna()` ·
-`count_uatg()` · `read_manifest()` · `read_annotation()` · `read_junctions()` ·
-`write_junctions()` · `read_bed()` / `read_bed12()` · `read_tag_bed()` ·
-`read_rmats()` · `read_palette()` · `parse_region()` · `presets()` ·
-`theme_omakase()` · `theme_omakase_axes()` · `omakase_palette()` ·
-`scale_fill_omakase()` · `format_activity()` · `format_count()` ·
-`format_coord()` · `format_percent()`
-
-Full documentation: `help(package = "omakase")`, or the two vignettes —
-`vignette("omakase")` and `vignette("consequence")`.
-
----
-
-## Comparison with other tools
-
-| | [ggsashimi](https://github.com/guigolab/ggsashimi) | [rmats2sashimiplot](https://github.com/Xinglab/rmats2sashimiplot) / [MISO](https://miso.readthedocs.io/en/fastmiso/sashimi.html) | **omakase** |
-|---|---|---|---|
-| Language | Python emitting R source as strings | Python + matplotlib | Native R |
-| Output | a file | a file | `ggplot` / `patchwork` objects |
-| Intermediate data | none | none | a documented, writable, re-readable object |
-| BAM / CRAM | ✅ | ✅ | ✅ |
-| SAM | ❌ | ✅ | ✅ (converted on read) |
-| rMATS events | ❌ | ✅ | ✅ (all five types) |
-| Region + GTF/GFF3 | ✅ | ✅ | ✅ |
-| STAR / regtools junctions | partial | ❌ | ✅ read **and** write |
-| 5′-tag data (CAGE, CamoTSS) | ❌ | ❌ | ✅ |
-| Arbitrary tidy tables | ❌ | ❌ | ✅ |
-| Overlay groups in one panel | ✅ | ❌ | ✅ |
-| Aggregate replicates | ✅ | grouping only | ✅ |
-| Normalisation | ❌ | ❌ | 8 methods incl. DESeq2 size factors |
-| Intron compression | `L^0.7`, axis fixed by post-processing generated code | integer divisor | 5 rules, exactly invertible, honest tick labels |
-| Exon scaling | ❌ | ✅ | ✅ |
-| Arc geometries | 1 (x-spline) | 1 (Bézier) | 6 |
-| Arc label on / above the line | on only | on only | ✅ either |
-| Panel background colour | ❌ | ❌ | ✅ |
-| Strand-specific libraries | ✅ | ❌ | ✅ |
-| Draw minus-strand 5′→3′ | ❌ | ✅ | ✅ |
-| PSI | ❌ | MISO posteriors | activity ratio and rMATS length-corrected |
-| Genome-track view | ❌ | ❌ | ✅ |
-| Transcript consequence | ❌ | ❌ | ✅ ORF-based classifier |
-| Command line | ✅ | ✅ | ✅ |
-| Unit tests | a few | ❌ | 268 |
-
-omakase draws the same junction counts as ggsashimi on the same alignments —
-this is checked against an independent computation in the test suite.
-
 ---
 
 ## Copyright and license
 
-Copyright © 2026 Ethan Shen.
+Copyright © 2026 Yuchen Shen.
 
 Released under the **MIT License**. See [LICENSE.md](LICENSE.md) for the full
 text. In short: use it, change it, redistribute it, sell it — just keep the
 copyright notice, and there is no warranty.
 
-### Example data
-
-The alignments in `inst/extdata/bams/` are from the **ENCODE Project**, whose
-data are released without restriction for research use. The region-restricted
-subsets and the accompanying GENCODE annotation were prepared by the
-**ggsashimi** authors and are redistributed here under that project's MIT
-licence. `inst/extdata/demo_consequence.tsv` is synthetic, and so is the
-simulated start-site locus in `data-raw/make_figures.R` — its gene name,
-coordinates, conditions and values are all invented. See
-[`inst/extdata/README.md`](inst/extdata/README.md) for details.
-
-- ENCODE Project Consortium (2012). An integrated encyclopedia of DNA elements
-  in the human genome. *Nature* **489**, 57–74.
-- Garrido-Martín D., Palumbo E., Guigó R., Breschi A. (2018). ggsashimi:
-  Sashimi plot revised for browser- and annotation-independent splicing
-  visualization. *PLOS Computational Biology* **14**(8), e1006360.
-- Katz Y., Wang E. T., Airoldi E. M., Burge C. B. (2010). Analysis and design of
-  RNA sequencing experiments for identifying isoform regulation. *Nature
-  Methods* **7**, 1009–1015. *(MISO, and the original sashimi plot.)*
-- Shen S. *et al.* (2014). rMATS: Robust and flexible detection of differential
-  alternative splicing from replicate RNA-Seq data. *PNAS* **111**(51),
-  E5593–E5601.
-- Love M. I., Huber W., Anders S. (2014). Moderated estimation of fold change
-  and dispersion for RNA-seq data with DESeq2. *Genome Biology* **15**, 550.
-  *(The median-of-ratios size factor.)*
-- Ramírez F. *et al.* (2018). High-resolution TADs reveal DNA sequences
-  underlying genome organization in flies. *Nature Communications* **9**, 189.
-  *(pyGenomeTracks, whose track idiom `plot_tracks()` follows.)*
-- Harrower M., Brewer C. A. (2003). ColorBrewer.org: An online tool for
-  selecting colour schemes for maps. *The Cartographic Journal* **40**(1),
-  27–37. *(The* Paired *and* Set2 *palettes.)*
 
 ### Citation
 
 If omakase is useful in published work, please cite the package alongside the
-tools whose data or algorithms you relied on:
+tools whose data or algorithms you relied on, for example:
 
-```r
-citation("omakase")
-```
+> "R package, omakase (https://github.com/EthanShenx/omakase), is used to visualize the data."
